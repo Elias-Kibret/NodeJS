@@ -1,0 +1,7 @@
+const path=require('path')
+console.log(path.sep)
+const filePath=path.join('/content','subfolder','tetx.txt')
+console.log(filePath)
+console.log(path.basename(filePath))
+console.log(path.dirname('C:\Users\Elias Kibret\Desktop\React\nodecodeadic>'))
+console.log(path.resolve(__dirname,'content','subfolder','text.txt'))
