@@ -1,29 +1,10 @@
-const { readFile, writeFile } = require('fs')
+// const http=require('http')
+// const server =http.createServer((req,res)=>{
+//    res.write('<h1>welcome to home page</h1>')
+//    res.end()
+// }).listen(3000)
+const _=require('lodash')
+const items=[1,[2,[3,[4]]]]
 
-console.log('start')
-readFile('./content/first.txt', 'utf8', (err, result) => {
-  if (err) {
-    console.log(err)
-    return
-  }
-  const first = result
-  readFile('./content/second.txt', 'utf8', (err, result) => {
-    if (err) {
-      console.log(err)
-      return
-    }
-    const second = result
-    writeFile(
-      './content/result-async.txt',
-      `Here is the result : ${first}, ${second}`,
-      (err, result) => {
-        if (err) {
-          console.log(err)
-          return
-        }
-        console.log('done with this task')
-      }
-    )
-  })
-})
-console.log('starting next task')
+const newItems=_.flattenDeep(items)
+console.log(newItems)
